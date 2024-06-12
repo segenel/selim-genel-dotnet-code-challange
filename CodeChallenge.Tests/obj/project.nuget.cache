@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "V8rk4BWObJNMh2bjRjr0MgV8r42ZfWArNxBcz8WN1GXafkA6QxQhtAdjvEskrF5txbY03j6eJIC0YI25ja4WRw==",
+  "dgSpecHash": "hKTImFwUERlMDPgU25UjENv2n+1Ua70Q4oLk/95DVwTWYekm3Qp2E7q2HmeMn/mCuKiI2iyWUmFnW3WDufJUhA==",
   "success": true,
   "projectFilePath": "/Users/segenel/Downloads/dotnet-code-challenge/CodeChallenge.Tests/CodeChallenge.Tests.Integration.csproj",
   "expectedPackageFiles": [

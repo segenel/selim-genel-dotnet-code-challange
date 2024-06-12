@@ -59,5 +59,39 @@ namespace CodeChallenge.Services
 
             return newEmployee;
         }
+
+        public ReportingStructure GetReportingStructure(String employeeId)
+        {
+            Employee employee = GetById(employeeId);
+
+            if (employee == null)
+            {
+                return null;
+            }
+
+            int numberOfReports = CalculateNumberOfReports(employee);
+
+            return new ReportingStructure
+            {
+                Employee = employee,
+                NumberOfReports = numberOfReports
+            };
+        }
+
+        private int CalculateNumberOfReports(Employee employee)
+        {
+            if (employee.DirectReports == null)
+            {
+                return 0;
+            }
+
+            int count = employee.DirectReports.Count;
+            foreach (var report in employee.DirectReports)
+            {
+                var directReport = GetById(report.EmployeeId);
+                count += directReport.DirectReports.Count;
+            }
+            return count;
+        }
     }
 }

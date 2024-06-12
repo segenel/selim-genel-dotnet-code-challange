@@ -58,5 +58,16 @@ namespace CodeChallenge.Controllers
 
             return Ok(newEmployee);
         }
+
+        [HttpGet("reportingStructure/{id}")]
+        public IActionResult GetReportingStructure(String id)
+        {
+            var reportingStructure = _employeeService.GetReportingStructure(id);
+            if (reportingStructure == null) 
+            {
+                return NotFound();
+            }
+            return Ok(reportingStructure);
+        }
     }
 }
