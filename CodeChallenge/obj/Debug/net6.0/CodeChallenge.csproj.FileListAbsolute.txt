@@ -32,3 +32,4 @@
 /Users/segenel/Downloads/dotnet-code-challenge/CodeChallenge/obj/Debug/net6.0/CodeChallenge.pdb
 /Users/segenel/Downloads/dotnet-code-challenge/CodeChallenge/obj/Debug/net6.0/CodeChallenge.genruntimeconfig.cache
 /Users/segenel/Downloads/dotnet-code-challenge/CodeChallenge/obj/Debug/net6.0/ref/CodeChallenge.dll
+/Users/segenel/Downloads/dotnet-code-challenge/CodeChallenge/obj/Debug/net6.0/CodeChallenge.sourcelink.json

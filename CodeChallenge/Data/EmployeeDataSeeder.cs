@@ -20,13 +20,13 @@ namespace CodeChallenge.Data
 
         public async Task Seed()
         {
-            if(!_employeeContext.Employees.Any())
-            {
-                List<Employee> employees = LoadEmployees();
-                _employeeContext.Employees.AddRange(employees);
+            _employeeContext.Employees.RemoveRange(_employeeContext.Employees);
+            
+            List<Employee> employees = LoadEmployees();
+            _employeeContext.Employees.AddRange(employees);
 
-                await _employeeContext.SaveChangesAsync();
-            }
+            await _employeeContext.SaveChangesAsync();
+            
         }
 
         private List<Employee> LoadEmployees()

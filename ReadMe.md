@@ -47,6 +47,9 @@ The Employee has a JSON schema of:
     "department": {
           "type": "string"
     },
+    "managerId": {
+          "type": "string"
+    },
     "directReports": {
       "type": "array",
       "items" : "string"
@@ -84,4 +87,4 @@ two new Compensation REST endpoints. One to create and one to read by employeeId
 Compensation from the persistence layer.
 
 ## Delivery
-Please upload your results to a publicly accessible Git repo. Free ones are provided by Github and Bitbucket.
+Pleasesupload your results to a publicly accessible Git repo. Free ones are provided by Github and Bitbucket.
