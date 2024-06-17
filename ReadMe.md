@@ -10,7 +10,7 @@ You can run this by executing `dotnet run` on the command line or in [Visual Stu
 
 
 ### How to Use
-The following endpoints are available to use:
+The following Employee endpoints are the available to use:
 ```
 * CREATE
     * HTTP Method: POST 
@@ -26,6 +26,11 @@ The following endpoints are available to use:
     * URL: localhost:8080/api/employee/{id}
     * PAYLOAD: Employee
     * RESPONSE: Employee
+* READ
+    * HTTP Method: GET
+    * URL: localhost:8080/api/employee/reportingStructure/{id}
+    * PAYLOAD: Employee
+    * RESPONSE: ReportingStructure
 ```
 The Employee has a JSON schema of:
 ```json
@@ -57,12 +62,56 @@ The Employee has a JSON schema of:
   }
 }
 ```
+The Reporting Structure has a JSON schema of:
+```json
+{
+  "type": "ReportingStructure",
+  "properties": {
+    "employee": {
+      "type": "Employee"
+    },
+    "numberOfReports": {
+      "type": "integer"
+    }
+  }
+}
+```
+The following Compensation endpoints are the available to use:
+```
+* CREATE
+    * HTTP Method: POST 
+    * URL: localhost:8080/api/compensation
+    * PAYLOAD: Compensation
+    * RESPONSE: Compensation
+* READ
+    * HTTP Method: GET 
+    * URL: localhost:8080/api/compensation/{id}
+    * RESPONSE: Compensation
+```
+
+The Compensation has a JSON schema of:
+```json
+{
+  "type": "Compensation",
+  "properties": {
+    "employee": {
+      "type": "Employee"
+    },
+    "salary": {
+      "type": "decimal"
+    },
+    "effectivcDate": {
+      "type": "DateTIme"
+    }
+  }
+}
+```
 For all endpoints that require an "id" in the URL, this is the "employeeId" field.
 
-## What to Implement
-Clone or download the repository, do not fork it.
+## What I Implemented
+I implemented both task 1 and task 2. Also, I made changes to the EmployeeControllerTest class as well as the Create endpoint for employee. To do so, I added a new ManagerId field to Employee as well. 
 
-### Task 1
+### Task 1 - COMPLETED
 Create a new type, ReportingStructure, that has two properties: employee and numberOfReports.
 
 For the field "numberOfReports", this should equal the total number of reports under a given employee. The number of 
@@ -81,10 +130,10 @@ This new type should have a new REST endpoint created for it. This new endpoint 
 the fully filled out ReportingStructure for the specified employeeId. The values should be computed on the fly and will 
 not be persisted.
 
-### Task 2
+### Task 2 - COMPLETED
 Create a new type, Compensation. A Compensation has the following fields: employee, salary, and effectiveDate. Create 
 two new Compensation REST endpoints. One to create and one to read by employeeId. These should persist and query the 
 Compensation from the persistence layer.
 
 ## Delivery
-Pleasesupload your results to a publicly accessible Git repo. Free ones are provided by Github and Bitbucket.
+Uploaded to git repo and shared the public repo to Mark Dupont.
