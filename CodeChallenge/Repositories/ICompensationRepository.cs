@@ -1,5 +1,6 @@
 using System;
 using CodeChallenge.Models;
+using System.Threading.Tasks;
 
 namespace CodeChallenge.Repositories
 {
@@ -7,5 +8,6 @@ namespace CodeChallenge.Repositories
     {
         Compensation Add(Compensation compensation);
         Compensation GetByEmployeeId(String employeeId);
+        Task SaveAsync();
     }
 }

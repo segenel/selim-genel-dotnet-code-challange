@@ -1,6 +1,11 @@
-namespace CodeChallenge.Services;
+using CodeChallenge.Models;
+using System;
 
-public interface ICompensationService
+namespace CodeChallenge.Services
 {
-    
+    public interface ICompensationService
+    {
+        Compensation Create(Compensation compensation);
+        Compensation GetByEmployeeId(String employeeId);
+    }
 }
