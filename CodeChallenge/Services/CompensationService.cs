@@ -23,6 +23,12 @@ namespace CodeChallenge.Services
         {
             if (compensation != null)
             {
+                if (compensation.Employee == null)
+                {
+                    _logger.LogDebug($"Employee id is required to create compensation");
+                    return null;
+                }
+                
                 // Validate the employee
                 var employee = _employeeRepository.GetById(compensation.Employee.EmployeeId);
                 if (employee == null)
@@ -38,7 +44,7 @@ namespace CodeChallenge.Services
                     _logger.LogDebug($"Employee with id { compensation.Employee.EmployeeId } already has a compensation");
                     return null;
                 }
-
+                
                 // Assign the valid employee reference
                 compensation.Employee = employee;
 

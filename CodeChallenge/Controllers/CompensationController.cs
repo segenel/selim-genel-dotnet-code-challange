@@ -22,13 +22,15 @@ namespace CodeChallenge.Controllers
         [HttpPost]
         public IActionResult Create([FromBody] Compensation compensation)
         {
-            _logger.LogDebug($"Received compensation create request for '{compensation.Employee.FirstName} {compensation.Employee.LastName}'");
+            _logger.LogDebug($"Received compensation create request for");
             
             var newCompensation = _compensationService.Create(compensation);
             if (newCompensation == null)
             {
                 return BadRequest("Error creating compensation.");
             }
+            
+            _logger.LogDebug($"Created compensation for { compensation.Employee.FirstName } {compensation.Employee.LastName}");
             
             return CreatedAtRoute("GetCompensationByEmployeeId", new { id = compensation.Employee.EmployeeId }, compensation);
         }
