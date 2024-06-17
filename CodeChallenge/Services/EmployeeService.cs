@@ -23,7 +23,7 @@ namespace CodeChallenge.Services
         {
             if (employee != null)
             {
-                // Ensure the DirectReports are valid and not already tracked
+                // Ensure the DirectReports are valid
                 ValidateDirectReports(employee);
                 
                 _employeeRepository.Add(employee);
