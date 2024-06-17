@@ -10,7 +10,7 @@ You can run this by executing `dotnet run` on the command line or in [Visual Stu
 
 
 ### How to Use
-The following Employee endpoints are the available to use:
+The following Employee endpoints are available to use:
 ```
 * CREATE
     * HTTP Method: POST 
@@ -57,7 +57,7 @@ The Employee has a JSON schema of:
     },
     "directReports": {
       "type": "array",
-      "items" : "string"
+      "items": "string"
     }
   }
 }
@@ -76,7 +76,7 @@ The Reporting Structure has a JSON schema of:
   }
 }
 ```
-The following Compensation endpoints are the available to use:
+The following Compensation endpoints are available to use:
 ```
 * CREATE
     * HTTP Method: POST 
